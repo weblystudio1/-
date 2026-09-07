@@ -66,10 +66,10 @@ export function AccessibilityMenu() {
       {/* Floating Toggle Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-[9999] w-12 h-12 bg-transparent border border-white/20 text-white rounded-full flex items-center justify-center hover:scale-110 hover:border-gold hover:text-gold transition-all duration-300 outline-none focus:ring-2 focus:ring-gold"
+        className="fixed bottom-6 right-6 z-[9999] w-12 h-12 bg-blue-600 border-2 border-white text-white rounded-full flex items-center justify-center hover:scale-110 hover:bg-blue-700 transition-all duration-300 shadow-2xl outline-none focus:ring-2 focus:ring-blue-400"
         aria-label="תפריט נגישות"
       >
-        <Accessibility className="w-6 h-6" />
+        <Accessibility className="w-7 h-7" />
       </button>
 
       {/* Accessibility Panel Overlay */}
@@ -108,20 +108,20 @@ export function AccessibilityMenu() {
               <div className="space-y-6">
                 {/* Font Size */}
                 <div className="space-y-3">
-                  <label className="text-sm font-medium text-gray-400 block">גודל טקסט</label>
+                  <label className="text-sm font-medium text-gray-300 block">גודל טקסט</label>
                   <div className="grid grid-cols-2 gap-2">
                     <button
                       onClick={() => setFontSize(prev => Math.min(prev + 10, 150))}
-                      className="flex items-center justify-center gap-2 py-3 bg-white/5 border border-white/10 hover:bg-gold/10 hover:border-gold/50 rounded-lg text-white transition-all"
+                      className="flex items-center justify-center gap-2 py-3 bg-gray-800 border border-gray-600 hover:bg-gray-700 hover:border-gray-500 rounded-lg text-white font-medium transition-all shadow-sm"
                     >
-                      <ZoomIn className="w-4 h-4" />
+                      <ZoomIn className="w-5 h-5" />
                       <span>הגדל</span>
                     </button>
                     <button
                       onClick={() => setFontSize(prev => Math.max(prev - 10, 80))}
-                      className="flex items-center justify-center gap-2 py-3 bg-white/5 border border-white/10 hover:bg-gold/10 hover:border-gold/50 rounded-lg text-white transition-all"
+                      className="flex items-center justify-center gap-2 py-3 bg-gray-800 border border-gray-600 hover:bg-gray-700 hover:border-gray-500 rounded-lg text-white font-medium transition-all shadow-sm"
                     >
-                      <ZoomOut className="w-4 h-4" />
+                      <ZoomOut className="w-5 h-5" />
                       <span>הקטן</span>
                     </button>
                   </div>
@@ -131,42 +131,42 @@ export function AccessibilityMenu() {
                 <div className="grid grid-cols-1 gap-2">
                   <button
                     onClick={() => setContrast(!contrast)}
-                    className={`flex items-center gap-4 p-4 rounded-xl border transition-all ${
-                      contrast ? 'bg-gold border-gold text-white' : 'bg-white/5 border-white/10 text-white hover:bg-white/10'
+                    className={`flex items-center gap-4 p-4 rounded-xl border transition-all shadow-sm ${
+                      contrast ? 'bg-gold border-gold text-black font-bold' : 'bg-gray-800 border-gray-600 text-white hover:bg-gray-700 hover:border-gray-500 font-medium'
                     }`}
                   >
-                    <Contrast className="w-5 h-5 flex-shrink-0" />
-                    <span className="font-medium">ניגודיות גבוהה</span>
+                    <Contrast className="w-6 h-6 flex-shrink-0" />
+                    <span>ניגודיות גבוהה</span>
                   </button>
 
                   <button
                     onClick={() => setGrayscale(!grayscale)}
-                    className={`flex items-center gap-4 p-4 rounded-xl border transition-all ${
-                      grayscale ? 'bg-gold border-gold text-white' : 'bg-white/5 border-white/10 text-white hover:bg-white/10'
+                    className={`flex items-center gap-4 p-4 rounded-xl border transition-all shadow-sm ${
+                      grayscale ? 'bg-gold border-gold text-black font-bold' : 'bg-gray-800 border-gray-600 text-white hover:bg-gray-700 hover:border-gray-500 font-medium'
                     }`}
                   >
-                    <RefreshCcw className="w-5 h-5 flex-shrink-0" />
-                    <span className="font-medium">גווני אפור</span>
+                    <RefreshCcw className="w-6 h-6 flex-shrink-0" />
+                    <span>גווני אפור</span>
                   </button>
 
                   <button
                     onClick={() => setHighlightLinks(!highlightLinks)}
-                    className={`flex items-center gap-4 p-4 rounded-xl border transition-all ${
-                      highlightLinks ? 'bg-gold border-gold text-white' : 'bg-white/5 border-white/10 text-white hover:bg-white/10'
+                    className={`flex items-center gap-4 p-4 rounded-xl border transition-all shadow-sm ${
+                      highlightLinks ? 'bg-gold border-gold text-black font-bold' : 'bg-gray-800 border-gray-600 text-white hover:bg-gray-700 hover:border-gray-500 font-medium'
                     }`}
                   >
-                    <MousePointer2 className="w-5 h-5 flex-shrink-0" />
-                    <span className="font-medium">הדגשת קישורים</span>
+                    <MousePointer2 className="w-6 h-6 flex-shrink-0" />
+                    <span>הדגשת קישורים</span>
                   </button>
 
                   <button
                     onClick={() => setReadableFont(!readableFont)}
-                    className={`flex items-center gap-4 p-4 rounded-xl border transition-all ${
-                      readableFont ? 'bg-gold border-gold text-white' : 'bg-white/5 border-white/10 text-white hover:bg-white/10'
+                    className={`flex items-center gap-4 p-4 rounded-xl border transition-all shadow-sm ${
+                      readableFont ? 'bg-gold border-gold text-black font-bold' : 'bg-gray-800 border-gray-600 text-white hover:bg-gray-700 hover:border-gray-500 font-medium'
                     }`}
                   >
-                    <Type className="w-5 h-5 flex-shrink-0" />
-                    <span className="font-medium">גופן קריא</span>
+                    <Type className="w-6 h-6 flex-shrink-0" />
+                    <span>גופן קריא</span>
                   </button>
                 </div>
 
@@ -175,10 +175,10 @@ export function AccessibilityMenu() {
                   <Link
                     to="/accessibility"
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all group"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-gray-800 border border-gray-600 text-white hover:bg-gray-700 hover:border-gray-500 font-medium transition-all shadow-sm group"
                   >
-                    <FileText className="w-5 h-5 text-gold" />
-                    <span className="font-medium">הצהרת נגישות</span>
+                    <FileText className="w-6 h-6 text-gold group-hover:scale-110 transition-transform" />
+                    <span>הצהרת נגישות</span>
                   </Link>
                   
                   <button
