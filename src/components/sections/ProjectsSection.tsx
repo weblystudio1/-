@@ -74,24 +74,25 @@ export function ProjectsSection({ preview = false }: { preview?: boolean }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-12 bg-primary-dark/95"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 md:p-12 bg-primary-dark/95"
             onClick={() => setSelectedImage(null)}
           >
-            <button 
-              className="absolute top-4 right-4 md:top-8 md:right-8 z-[110] p-3 rounded-full bg-white text-black shadow-xl hover:bg-gray-200 transition-colors duration-300"
-              onClick={() => setSelectedImage(null)}
-            >
-              <X className="w-6 h-6 md:w-8 md:h-8" strokeWidth={2.5} />
-            </button>
-            <motion.img
-              initial={{ scale: 0.95 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.95 }}
-              src={selectedImage}
-              alt="Project Full View"
-              className="w-full h-full object-contain max-h-[85vh] rounded-none shadow-2xl shadow-black"
-              onClick={(e) => e.stopPropagation()}
-            />
+            <div className="relative inline-flex max-w-full max-h-full" onClick={(e) => e.stopPropagation()}>
+              <button 
+                className="absolute -top-3 -right-3 sm:-top-5 sm:-right-5 z-[110] p-2 sm:p-3 rounded-full bg-white text-black shadow-xl hover:bg-gray-200 transition-colors duration-300"
+                onClick={() => setSelectedImage(null)}
+              >
+                <X className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={2.5} />
+              </button>
+              <motion.img
+                initial={{ scale: 0.95 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.95 }}
+                src={selectedImage}
+                alt="Project Full View"
+                className="max-w-full max-h-[85vh] w-auto h-auto object-contain shadow-2xl shadow-black/80"
+              />
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
