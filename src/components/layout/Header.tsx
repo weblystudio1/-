@@ -133,6 +133,7 @@ export function Header() {
                   <Link
                     key={link.path}
                     to={link.path}
+                    onClick={() => setMobileMenuOpen(false)}
                     className="font-heading text-lg font-light text-white hover:text-gold transition-colors border-b border-white/5 pb-3"
                   >
                     {link.name}
