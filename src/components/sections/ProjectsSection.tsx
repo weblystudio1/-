@@ -27,13 +27,14 @@ export function ProjectsSection({ preview = false }: { preview?: boolean }) {
             <p className="text-gray-300 text-base sm:text-lg">הצצה קטנה ומדויקת לעבודות הנבחרות שלנו ברחבי ישראל. הגימור המקצועי מדבר בעד עצמו.</p>
           </motion.div>
         </div>
+      </div>
 
-        {/* Gallery Grid - Single row of 4 columns on large screens */}
-        <motion.div 
-          layout
-          className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto"
-        >
-          <AnimatePresence mode="popLayout">
+      {/* Gallery Grid - Full Bleed */}
+      <motion.div 
+        layout
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full"
+      >
+        <AnimatePresence mode="popLayout">
             {projectsData.map((project) => (
               <motion.div
                 layout
@@ -65,7 +66,6 @@ export function ProjectsSection({ preview = false }: { preview?: boolean }) {
             ))}
           </AnimatePresence>
         </motion.div>
-      </div>
 
       {/* Lightbox for zooming */}
       <AnimatePresence>
@@ -78,10 +78,10 @@ export function ProjectsSection({ preview = false }: { preview?: boolean }) {
             onClick={() => setSelectedImage(null)}
           >
             <button 
-              className="absolute top-6 right-6 p-2 rounded-full glass text-white hover:text-gold transition-colors"
+              className="absolute top-4 right-4 md:top-8 md:right-8 z-[110] p-3 rounded-full bg-white text-black shadow-xl hover:bg-gray-200 transition-colors duration-300"
               onClick={() => setSelectedImage(null)}
             >
-              <X className="w-6 h-6" />
+              <X className="w-6 h-6 md:w-8 md:h-8" strokeWidth={2.5} />
             </button>
             <motion.img
               initial={{ scale: 0.95 }}

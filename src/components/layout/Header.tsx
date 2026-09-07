@@ -36,7 +36,7 @@ export function Header() {
       <header
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out',
-          isHeaderScrolled ? 'bg-primary-dark/95 py-1 md:py-1.5 border-b border-white/10 shadow-md backdrop-blur-md' : 'bg-transparent py-1.5 md:py-2'
+          isHeaderScrolled ? 'bg-[#111827]/95 py-2 md:py-3 border-b border-white/10 shadow-md backdrop-blur-md' : 'bg-transparent py-3 md:py-4 mt-2'
         )}
       >
         <div className="container mx-auto px-4 md:px-6">
@@ -63,7 +63,7 @@ export function Header() {
                     to={link.path}
                     className="relative text-sm md:text-base font-semibold transition-colors hover:text-gold py-1"
                   >
-                    <span className={cn(isActive ? 'text-gold' : isHeaderScrolled ? 'text-slate-700 hover:text-gold' : 'text-white/70 hover:text-gold-light')}>{link.name}</span>
+                    <span className={cn(isActive ? 'text-gold' : 'text-white/80 hover:text-gold')}>{link.name}</span>
                     {isActive && (
                       <motion.div
                         layoutId="active-nav"
@@ -83,7 +83,7 @@ export function Header() {
                 className={cn(
                   "hidden lg:flex items-center gap-2 text-xs md:text-sm font-medium border rounded-none px-4 py-1.5 transition-all duration-300 shadow-sm",
                   isHeaderScrolled 
-                    ? "bg-transparent border-black text-black hover:bg-black/5" 
+                    ? "bg-transparent border-white/30 text-white hover:bg-white/10" 
                     : "bg-white/10 border-white/20 text-white hover:bg-white/20"
                 )}
               >
@@ -92,10 +92,7 @@ export function Header() {
               </a>
 
               <button
-                className={cn(
-                  "md:hidden p-1.5 transition-colors",
-                  isHeaderScrolled ? "text-slate-800 hover:text-gold" : "text-white hover:text-gold"
-                )}
+                className="md:hidden p-1.5 text-white hover:text-gold transition-colors"
                 onClick={() => setMobileMenuOpen(true)}
               >
                 <Menu className="w-6 h-6" />
@@ -121,14 +118,14 @@ export function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed right-0 top-0 bottom-0 w-[65%] max-w-[260px] bg-primary-dark border-r border-white/5 z-[70] shadow-2xl flex flex-col"
+              className="fixed right-0 top-0 bottom-0 w-[65%] max-w-[260px] bg-[#111827] border-r border-white/10 z-[70] shadow-2xl flex flex-col"
             >
               <div className="p-4 flex justify-end">
                 <button
                   className="p-1.5 text-gray-400 hover:text-white transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-6 h-6" />
                 </button>
               </div>
               <div className="flex-1 flex flex-col px-6 gap-5 mt-2">
