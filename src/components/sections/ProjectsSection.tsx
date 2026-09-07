@@ -13,9 +13,9 @@ export function ProjectsSection({ preview = false }: { preview?: boolean }) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
-    <section className="py-24 md:py-32 bg-primary-dark">
+    <section className="bg-primary-dark">
       <div className="container mx-auto px-4 sm:px-6 w-full max-w-7xl">
-        <div className="flex flex-col items-center text-center gap-8 mb-16">
+        <div className="flex flex-col items-center text-center gap-8 mb-16 pt-24 md:pt-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -23,7 +23,6 @@ export function ProjectsSection({ preview = false }: { preview?: boolean }) {
             className="max-w-2xl mx-auto"
           >
             <span className="text-gold font-medium tracking-widest text-sm mb-3 block">מבט אל הפרויקטים</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white mb-6">עשייה מעוררת השראה</h2>
             <p className="text-gray-300 text-base sm:text-lg">הצצה קטנה ומדויקת לעבודות הנבחרות שלנו ברחבי ישראל. הגימור המקצועי מדבר בעד עצמו.</p>
           </motion.div>
         </div>

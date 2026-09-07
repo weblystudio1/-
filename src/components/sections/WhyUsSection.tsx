@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import { Award, Compass, HeartHandshake, Wrench, Settings2, ShieldCheck } from 'lucide-react';
+import { Award, Box, HeartHandshake, Wrench, Settings2, ShieldCheck } from 'lucide-react';
 
 const reasons = [
   { icon: Award, title: 'ותק ומקצועיות ללא פשרות', desc: 'שנים רבות של עשייה ופיתוח פתרונות מתקדמים בחזית התעשייה.' },
-  { icon: Compass, title: 'חומרים מובחרים בלבד', desc: 'ייבוא ועבודה עם פרופילי אלומיניום ופרזול מהרמה הגבוהה ביותר.' },
+  { icon: Box, title: 'חומרים מובחרים בלבד', desc: 'ייבוא ועבודה עם פרופילי אלומיניום ופרזול מהרמה הגבוהה ביותר.' },
   { icon: HeartHandshake, title: 'שירות אישי ומסור', desc: 'ליווי רצוף ומענה מהיר לאורך כל התהליך לשקט הבריאותי שלכם.' },
   { icon: Wrench, title: 'ביצוע והרכבה מדויקת', desc: 'התקנות בשטח ע"י מומחים קפדניים השומרים על ניקיון ורמת גימור מושלמת.' },
   { icon: ShieldCheck, title: 'ביטחון ואחריות מלאה', desc: 'ראש שקט עם אחריות רחבה וממושכת עבור העבודות והמערכות השונות.' },
@@ -24,7 +24,7 @@ export function WhyUsSection() {
             <span className="text-gold font-medium tracking-widest text-sm mb-3 block">החתימה המקצועית</span>
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-heading font-bold text-white mb-6">מה הופך אותנו לבחירה הנכונה עבורכם?</h2>
             <p className="text-gray-300 text-base sm:text-lg mb-8 leading-relaxed max-w-2xl mx-auto">
-              עבודה איתנו מקנה לכם ביטחון ושקט נפשי מתחילת הדרך. השילוב המושלם בין מומחיות הנדסית, חומרי פרימיום ועבודת ידיים יצירתית מבטיח מוצרי פאר עמידים ויציבים לאורך זמן.
+              עבודה איתנו מקנה לכם ביטחון ושקט נפשי מתחילת הדרך. השילוב המושלם בין מומחיות הנדסית, חומרים איכותיים ועבודת ידיים יצירתית מבטיח מוצרי פאר עמידים ויציבים לאורך זמן.
             </p>
           </motion.div>
         </div>
