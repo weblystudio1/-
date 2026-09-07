@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-dark: #FAFDFE;
+  --color-primary: #F0F9FF;
+  --color-primary-light: #E0F2FE;
+  --color-gold: #0091FF;
+  --color-gold-light: #7DD3FC;
+  --color-gold-dark: #0070C4;
+  --font-sans: "Secular One", system-ui, -apple-system, sans-serif;
+  --font-heading: "Secular One", system-ui, -apple-system, sans-serif;
+  --font-suez: "Suez One", serif;
+}
+
+@layer base {
+  html {
+    direction: rtl;
+  }
+  body {
+    @apply bg-primary-dark text-slate-800 font-sans antialiased overflow-x-hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+  button, a {
+    touch-action: manipulation;
+  }
+  
+  /* Make all interactable elements snap quickly on mobile tap */
+  @media (max-width: 768px) {
+    button, a, .group {
+      transition-duration: 75ms !important;
+    }
+    button:active, a:active {
+      transform: scale(0.98);
+    }
+  }
+
+  /* --- Dynamic Light Blue & White Theme Adaptations --- */
+  
+  /* General text readability over our light blue / white background */
+  h1, h2, h3, h4, h5, h6 {
+    color: #0d1e3d !important; /* deep primary-dark text */
+  }
+
+  /* Make sure plain text falls back to high-readability slate-700 instead of pure text-white rules */
+  p, li, select, input, textarea {
+    color: #334155 !important; /* slate-700 */
+  }
+
+  /* Soften general text utility classes without breaking custom CTA label colors */
+  .text-gray-100 { color: #0d1e3d !important; }
+  .text-gray-200 { color: #1e293b !important; }
+  .text-gray-300 { color: #334155 !important; }
+  .text-gray-400 { color: #475569 !important; }
+  .text-gray-500 { color: #64748b !important; }
+
+  /* Adjust active link/status color helper texts to the new rich sky blue */
+  .text-gold {
+    color: #0082e4 !important;
+  }
+  .bg-gold {
+    background-color: #0082e4 !important;
+  }
+  .border-gold {
+    border-color: #0082e4 !important;
+  }
+
+  /* Standard sections keep a highly responsive clear shadow and white card structure */
+  .bg-white\/5 {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+  .border-white\/10 {
+    border-color: rgba(0, 145, 255, 0.12) !important;
+  }
+  .glass {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(0, 145, 255, 0.15) !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 145, 255, 0.08) !important;
+  }
+  .glass-dark {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    border-color: rgba(0, 145, 255, 0.2) !important;
+    box-shadow: 0 10px 30px -4px rgba(0, 145, 255, 0.1) !important;
+  }
+  .glass-gold {
+    background-color: rgba(240, 249, 255, 0.95) !important;
+    border-color: rgba(0, 145, 255, 0.2) !important;
+  }
+  
+  /* Retain bright text inside solid call-to-actions specifically */
+  .bg-gold h1, .bg-gold h2, .bg-gold h3, .bg-gold p, .bg-gold span, .bg-gold *,
+  button.bg-gold *, a.bg-gold *, 
+  .bg-sky-600 *, .bg-blue-600 *,
+  .text-white-force {
+    color: #ffffff !important;
+  }
+  .font-suez {
+    font-family: "Suez One", "Secular One", serif !important;
+  }
+}
+
+
+
+@layer utilities {
+  /* Hardware acceleration for mobile performance */
+  img {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  .glass {
+    @apply bg-white/5 border border-white/10;
+  }
+  .glass-dark {
+    @apply bg-primary-dark/95 border border-gold/40;
+  }
+  .glass-gold {
+    @apply bg-gold/10 border border-gold/30;
+  }
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-[#D4AF37];
+  }
+  .gold-glow {
+    box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.4);
+  }
+  .gold-glow-hover:hover {
+    box-shadow: 0 15px 30px -5px rgba(212, 175, 55, 0.6);
+  }
+  .bg-grid-white {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.04)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+  }
+}
+
+/* Accessibility Modes */
+.high-contrast {
+  --color-primary-dark: #000000;
+  --color-primary: #000000;
+  --color-gold: #ffff00;
+  --color-gold-dark: #ffff00;
+  --color-white: #ffffff;
+}
+
+.high-contrast * {
+  border-color: #ffff00 !important;
+  color: #ffffff !important;
+}
+
+.high-contrast button, 
+.high-contrast a,
+.high-contrast select,
+.high-contrast input {
+  background-color: #000000 !important;
+  border: 2px solid #ffff00 !important;
+  color: #ffff00 !important;
+}
+
+.grayscale-mode {
+  filter: grayscale(100%) !important;
+}
+
+.highlight-links a {
+  text-decoration: underline !important;
+  outline: 2px solid #ffff00 !important;
+  background-color: rgba(0,0,0,0.8) !important;
+  color: #ffff00 !important;
+}
+
+.readable-font {
+  font-family: Arial, sans-serif !important;
+}
+
+.readable-font * {
+  font-family: Arial, sans-serif !important;
+}
+
+div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2),
+div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) * {
+  color: #0091FF !important;
+}
+

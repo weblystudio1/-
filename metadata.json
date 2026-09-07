@@ -1,0 +1,8 @@
+{
+  "name": "מ.ס אלומיניום",
+  "description": "עבודות אלומיניום מתקדמות, פרגולות וסגירת מרפסות באשקלון",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
